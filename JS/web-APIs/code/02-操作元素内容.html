@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">今天天气还不错吧</div>
+    <script>
+        // 1.获取元素
+        const b = document.querySelector('.box')
+        console.log(b);
+        // 2. 获取文字内容
+        console.log(b.innerText)
+
+        // 2.1修改文字样式 -- 对象.innerText(属性)
+        // b.innerText = '还可' //不解析标签
+        
+        // 2.2修改文字内容以及样式
+        b.innerHTML = '<strong>加粗</strong>'  //解析标签
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <p>我不变色</p>
+    </ul>
+    <script>
+        // 点击哪个li哪个li字体颜色就变为红色
+        const ul = document.querySelector('ul')
+        ul.addEventListener('click', function(e){
+            // 1.1事件委托，即点击子级通过冒泡的方式传递给ul并实现所要的效果
+            // ul.style.color = 'red'
+            // 1.2点击谁谁就变色
+            // e.target.style.color = 'red'
+            // 1.3p标签的不变色
+            // e.target.tagName 找出某个标签
+            if(e.target.tagName === 'LI'){
+                e.target.style.color = 'red'
+            }
+        })
+    </script>
+</body>
+</html>

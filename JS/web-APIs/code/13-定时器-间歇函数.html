@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一种写法
+        // // setInterval(函数名，间隔时间/ms),函数名后是不加小括号的
+        // setInterval(function(){
+        // // 1000ms = 1s
+        // console.log('一秒执行一次');
+        // }, 1000)
+
+        // 第二种写法
+        function fn(){
+            console.log('一秒执行一次')
+        }
+        let n = setInterval(fn, 1000) //该定时器的编号（是固定的）
+        clearInterval(n) //关闭定时器
+    </script>
+</body>
+</html>

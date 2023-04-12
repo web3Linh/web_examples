@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2.view视图：vue控制的DOM区域 -->
+    <div id="app">
+        <!-- v-text将username中的值渲染到第一个p标签中 -->
+        <p v-text="username"></p>
+        <!-- v-text将username中的值渲染到第二个p标签中并覆盖p中默认文本内容 -->
+        <p v-text="gender">女</p>
+        <!-- {{}}：插值表达式，可解决v-text覆盖默认文本内容问题 -->
+        <p>年龄：{{age}}</p>
+
+        <h2 v-text="desc"></h2>
+        <h2>{{desc}}</h2>
+        <!-- v-html:可将包含html标签的字符串渲染为页面的html元素 -->
+        <h2 v-html="desc"></h2>
+    </div>
+
+    <!-- 1.导入vue.js的script脚本文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    <script>
+        // 3.vm实例对象：ViewModel
+       const vm= new Vue({
+        // 指定vue控制的区域
+        el:'#app',
+
+        // 指定model数据源
+        data:{
+            username:'zqx',
+            gender:'女',
+            age:'22',
+            //i为字体倾斜标签
+            desc:'<i style="color:pink">樱花</i>'
+        }
+       })
+    </script>
+</body>
+</html>

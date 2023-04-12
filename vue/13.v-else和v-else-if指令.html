@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 若随机数num大于0.5则显示第一个p标签里的内容，反之显示第二个p中的内容 -->
+      <p v-if="num >0.5">随机数>0.5</p>
+      <p v-else="num">随机数<=0.5</p>
+
+      <hr>
+
+      <p v-if="type === 'A'">优秀</p>
+      <p v-else-if="type === 'B'">良好</p>
+      <p v-else-if="type === 'C'">一般</p>
+      <p v-else="type === 'D'">差</p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    <script>
+      const vm = new Vue({
+        el:'#app',
+        data:{
+          // 生成1以内的随机数
+          num:Math.random(),
+          //类型
+          type:'B',
+        }
+      })
+    </script>
+  </body>
+</html>

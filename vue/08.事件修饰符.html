@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .inner {
+      line-height: 100px;
+      background-color: aliceblue;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .outer {
+      background-color: bisque;
+      padding: 50px;
+      font-size: 13px;
+    }
+
+    .box {
+      background-color: coral;
+      padding: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 在页面中声明一个将要被 vue 所控制的 DOM 区域 -->
+  <div id="app">
+    <h4>① .prevent 事件修饰符的应用场景</h4>
+    <!-- .prevent可以阻止链接默认跳转行为 -->
+    <a href="https://www.baidu.com" @click.prevent="onLinkClick">百度首页</a>
+
+    <hr />
+
+    <h4>② .stop 事件修饰符的应用场景</h4>
+    <div class="outer" @click="onOuterClick">
+      外层的 div
+      <!-- .stop阻止事件的冒泡 -->
+      <div class="inner" @click.stop="onInnerClick">内部的 div</div>
+    </div>
+
+    <hr />
+
+    <h4>③ .capture 事件修饰符的应用场景</h4>
+    <!-- 事件默认情况下是以冒泡的方式执行的 -->
+    <!-- .capture：以捕获的方式执行事件 -->
+    <div class="outer" @click.capture="onOuterClick">
+      外层的 div
+      <div class="inner" @click="onInnerClick">内部的 div</div>
+    </div>
+
+    <hr />
+
+    <h4>④ .once 事件修饰符的应用场景</h4>
+    <!-- .once保证事件只被触发一次 -->
+    <div class="inner" @click.once="onInnerClick">内部的 div</div>
+
+    <hr />
+
+    <h4>⑤ .self 事件修饰符的应用场景</h4>
+    <div class="box" @click="onBoxClick">
+      最外层的 box
+      <!-- .self只有点击是当前的元素才会触发对应的事件处理函数，而通过冒泡的方式传递过来的那么不会触发.self修饰的这个事件处理函数 -->
+      <div class="outer" @click.self="onOuterClick">
+        中间的 div
+        <div class="inner" @click="onInnerClick">内部的 div</div>
+      </div>
+    </div>
+
+    <hr />
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      // 声明处理函数的节点
+      methods: {
+        // 超链接的点击事件处理函数
+        onLinkClick() {
+          alert('ok')
+        },
+        // 点击了外层的 div
+        onOuterClick() {
+          console.log('触发了 outer 的 click 事件处理函数')
+        },
+        // 点击了内部的 div
+        onInnerClick() {
+          console.log('触发了 inner 的 click 事件处理函数')
+        },
+        onBoxClick() {
+          console.log('触发了 box 的 click 事件处理函数')
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

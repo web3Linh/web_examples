@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/ad.png" alt="">
+    <script>
+        // // 延时函数（只执行一次） -- 延时一秒才调用函数
+        // setTimeout(function(){
+        //     console.log('时间到了')
+        // },1000)
+        
+        const img = document.querySelector('img')
+        // 3s过后隐藏图片
+        setTimeout(function(){
+            img.style.display = 'none'
+        }, 3000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.遍历数组，了解就可
+        let arr = ['pink','green','blue']
+        for(let k in arr){
+            // console.log(k);   //打印出来的是数组的下标（索引号），但是是字符串
+            console.log(arr[k]);
+        }
+
+        // 2.遍历对象
+        let obj = {
+            name: 'xiaoxiao',
+            age: '18',
+            sex: '女'
+        }
+        for(let k in obj){
+            // console.log(k);   //打印出 'name' 'age' 'sex'字符串
+            console.log(obj[k]); //k相当于='name' 、 'age' 、 'sex'
+        }
+    </script>
+</body>
+</html>

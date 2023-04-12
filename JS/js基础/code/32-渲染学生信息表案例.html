@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        tr {
+            height: 40px;
+            /* 显示的光标的类型（形状）为手 */
+            cursor: pointer;
+        }
+
+        table tr:nth-child(1) {
+            background-color: #ddd;
+        }
+        /* 表的第一行无悬停效果 */
+        table tr:not(:first-child):hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>学生信息</h2>
+    <p>将数据渲染到页面中...</p>
+
+    <table>
+        <caption>学生列表</caption>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>
+
+        <script>
+             // // 定义一个数组并把多个对象组放进去
+        // let arr = [
+        //     {name: '小张', age: '18', sex: '女'},
+        //     {name: '小林', age: '18', sex: '女'},
+        //     {name: '小杨', age: '18', sex: '女'}
+        // ]
+        // for(let i = 0; i < arr.length; i++){
+        //     //打印出对象
+        //     console.log(arr[i])   
+
+        //     //打印出对象里的某个属性
+        //     console.log(arr[i].name);
+        // }
+        
+        let arr = [
+            {name: '小张', age: '18', sex: '女', hometown: '四川'},
+            {name: '小林', age: '19', sex: '女', hometown: '江西'},
+            {name: '小杨', age: '17', sex: '女', hometown: '湖北'}, 
+            {name: '小李', age: '18', sex: '女', hometown: '浙江'}, 
+            {name: '小王', age: '20', sex: '男', hometown: '江苏'},  
+        ]
+        // 渲染页面
+        // 循环4行
+        for (let i = 1; i <= arr.length; i++){
+            document.write(`
+            <tr>
+                <td>${i}</td>
+                <td>${arr[i- 1].name}</td>
+                <td>${arr[i- 1].age}</td>
+                <td>${arr[i- 1].sex}</td>
+                <td>${arr[i- 1].hometown}</td>
+            </tr>
+            `)
+        }
+        </script>
+    </table>
+</body>
+</html>

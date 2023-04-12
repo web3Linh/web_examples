@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-bind为元素的属性动态绑定属性值，其简写形式为“：” -->
+        <input type="text" :placeholder="inputValue">
+        <hr>
+        <img v-bind:src="imgSrc" alt="">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    <script>
+        const vm = new Vue({
+           el:'#app',
+           data:{
+            inputValue:'请输入内容',
+            imgSrc:'./image/1.jpg'
+           }
+        })
+    </script>
+</body>
+</html>

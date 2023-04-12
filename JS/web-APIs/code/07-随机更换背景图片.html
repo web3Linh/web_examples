@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            /* 背景图靠上铺满 */
+            background: url(./images/desktop_1.jpg) no-repeat top center / cover;
+        }
+    </style>
+</head>
+<body>
+    <script>
+       // 1.定义一个随机函数
+       function getRandom(N, M){
+            // 返回随机数
+            return Math.floor(Math.random() *(M - N + 1)) + N
+        }
+        const random = getRandom(1, 10)
+        // console.log(document.body) --特殊，不用再单独获取
+        document.body.style.backgroundImage = `url(./images/desktop_${random}.jpg)`
+    </script>
+</body>
+</html>

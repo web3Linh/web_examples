@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            color: black;
+            background-color: pink;
+        }
+        .active{
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box active">樱花</div>
+    <script>
+        const div = document.querySelector('div')
+        // div.classList.add -- 追加类
+        // div.classList.add('active')
+        // // div.classList.remove -- 删除类
+        // div.classList.remove('active')
+        // // div.classList.toggle('active') -- 切换类：有这个类就加上没有就删除
+        div.classList.toggle('active')
+    </script>
+</body>
+</html>

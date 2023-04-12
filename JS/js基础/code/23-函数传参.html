@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getSum(n,m){
+            // n,m形参 - 形式上的参数
+            // 累加和
+            let sum =0
+            for(let i = n; i <= m; i++){
+                sum += i
+            }
+            console.log(sum);
+        }
+        let num1 = +prompt('请输入起始值:')
+        let num2 = +prompt('请输入结束值:')
+        // num1传给了n，num2传给了m
+        getSum(num1,num2)   //实参 - 实际的参数
+
+        // x = 0, y = 0给形参默认值。这个默认值只会在缺少实参参数传递时才会被执行，所以有参数会优先执行传递过来大的参数，否则默认为undefined
+        function getSum1(x = 0, y = 0) {
+            document.write(x + y)
+        }
+        getSum1(1,2)
+
+        document.write(`<br>`)
+
+        getSum1()
+    </script>
+</body>
+</html>

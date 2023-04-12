@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.匿名函数--函数表达式
+        let fn = function (x, y){
+            return x + y    
+        }
+        let re = fn(3, 4)
+        document.write(`两数之和为：${re}`)
+
+        document.write(`<br>`)
+        
+        // 2.具名函数--先声明函数表达式后调用
+        function fun(){
+            document.write('我是具名函数')
+        }
+        // 调用函数
+        fun()
+
+        // 3.立即执行函数--多个立即执行函数之间用分号隔开
+        // 3.1第一种写法
+        // 第三个括号(1, 2)相当于调用函数
+        ;(function(x, y){   //形参
+          console.log(x + y)
+        })(1, 2);   //实参
+
+        // 3.2第二种写法
+        (function(x, y){
+            console.log(x + y);
+        }(3, 6))
+    </script>
+</body>
+</html>

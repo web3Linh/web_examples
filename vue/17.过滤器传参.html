@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- maxLength(3)传递截取参数（位数）为3 -->
+      <p :title="info | capitalize">{{message | capitalize | maxLength(3)}}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    
+    <script>
+      // 全局过滤器
+      // 首字母转大写的过滤器
+      Vue.filter('capitalize', (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1)
+      })
+
+      // 定义控制文本长度的过滤器
+      //'len'来接收截取过的文本。len = 10意为如没有参数则默认截取位数为10字符 
+      Vue.filter('maxLength', (str, len = 10) => {
+        if(str.length <= len) return str
+        return str.slice(0, len) + '...'
+      })
+    </script>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello vue.js',
+          info: 'title info',
+        },
+      })
+    </script>
+  </body>
+</html>

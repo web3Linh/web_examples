@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.获得时间戳
+        console.log(+new Date())
+
+        // 2.根据日期返回星期几
+        const date =new Date()
+        console.log(date.getDay())
+        const a = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        console.log(a[date.getDay()])
+    </script>
+</body>
+</html>

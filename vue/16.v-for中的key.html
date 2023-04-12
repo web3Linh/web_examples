@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 在页面中声明一个将要被 vue 所控制的 DOM 区域 -->
+  <div id="app">
+
+    <!-- 添加用户的区域 -->
+    <div>
+      <input type="text" v-model="name">
+      <button @click="addNewUser">添加</button>
+    </div>
+
+    <!-- 用户列表区域 -->
+    <ul>
+      <!-- 在列表有状态时应添加key属性。:key绑定key属性 -->
+      <li v-for="(user, index) in userlist" :key="user.id">
+        <input type="checkbox" />
+        姓名：{{user.name}}
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        // 用户列表
+        userlist:[
+          {id:1,name:'zqx'},
+          {id:2,name:'wnb'}
+        ],
+        // 输入的用户名
+        name:'',
+        // 下一个可用的 id 值
+        nextId:3,
+      },
+       methods:{
+        // 点击了添加按钮
+        // 申明addNewUser方法
+        addNewUser(){
+          this.userlist.unshift({id:this.nextId,name:this.name})
+          this.name = ''
+          this.nextId++
+        }
+       }
+    })
+  </script>
+</body>
+
+</html>

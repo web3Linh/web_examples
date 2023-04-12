@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2.在页面中声明一个将要被vue所控制的DOM区域 -->
+    <div id="app">
+        <!-- v-for:遍历数组 -->
+        <!-- index:索引 -->
+        <p v-for="(user,index) in list">他们的名字分别是：{{i}}-------------------{{user.name}}</p>
+    </div>
+
+    <!-- 1.导入vue.js的脚本文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    
+    <script>
+    //  3.创建vue实例对象   
+    const vm = new Vue({
+        // 3.1指定vue要控制页面的哪个区域
+        el:'#app',
+        // 指定Model数据源
+        data:{
+            list:[
+                {id:1,name:'zqx'},
+                {id:2,name:'wnb'},
+            ]
+        } 
+    })
+    </script>
+</body>
+</html>

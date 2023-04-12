@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // // 等待页面所有资源加载完成之后，再回去执行回调函数
+        // window.addEventListener('load', function () {
+        //     const btn = document.querySelector('button')
+        //     btn.addEventListener('click', function () {
+        //         alert('我是button')
+        //     })
+        // })
+
+        // 不需要等样式表、图片等完全加载再去执行
+        document.addEventListener('DOMContentLoaded', function(){
+            const btn = document.querySelector('button')
+            btn.addEventListener('click', function () {
+                alert('我是button')
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>按钮</button>
+</body>
+</html>

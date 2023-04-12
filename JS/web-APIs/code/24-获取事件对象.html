@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+
+    <script>
+        const input = document.querySelector('input')
+        // 添加事件对象 e('e' 这个写法不固定)
+        input.addEventListener('keyup', function(e){
+            // e.key属性可知道用户按下了哪个键
+            if(e.key === 'Enter' ){
+                console.log('我按下了enter键');
+            }
+        })
+    </script>
+</body>
+</html>

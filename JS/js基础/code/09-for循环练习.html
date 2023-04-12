@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(变量起始值；终止条件；变量变化量)
+        for(let i = 1 ; i <= 100 ; i++ ){
+            document.write(`今年我${i}岁了<br>`)
+        }
+
+        // 求1~100之间的偶数和
+        let sum = 0
+        for(let h = 1 ; h <= 100 ; h++){
+            if(h % 2 === 0){
+                sum = sum + h
+            }
+        }
+        document.write(`1~100之间的偶数和是${sum}`)
+
+        // 打印数组
+        let arr = ['小张','小李','小杨','小林']
+        // for(let m = 0 ; m <= arr.length - 1; m++){
+        //     console.log(arr[m])
+        // }
+        // 必须从零开始，因为数组索引编号从零开始 arr.length=4
+        for(let m = 0; m < arr.length; m++){
+            console.log(arr[m]);
+        }
+    </script>
+</body>
+</html>

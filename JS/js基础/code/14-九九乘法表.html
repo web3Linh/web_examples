@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            /* 转换成行内块 */
+            display: inline-block;
+            /* 内边距 */
+            padding: 5px 10px;
+            /* 边框 */
+            border: 1px solid pink;
+            /* 外边距 */
+            margin: 2px;
+            /* 圆角 */
+            border-radius: 8px;
+            /* 阴影 */
+            box-shadow: 2px 2px 2px rgb(255, 192, 203,.4);
+            /* .2：表示透明度 */
+            background-color: rgb(255, 192, 203,.1);
+            width: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for(let i = 1; i <= 9; i++){
+            for(let j = 1; j <= i; j++){
+                document.write(`
+                <span>${j} x ${i} = ${i * j}</span>
+                `)
+            }
+            document.write(`<br>`)
+        }
+    </script>
+</body>
+</html>

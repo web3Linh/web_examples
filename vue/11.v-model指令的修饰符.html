@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- .trim自动过滤用户输入的首尾空白字符 -->
+      姓名：<input type="text" v-model.trim="username" />
+
+      <hr />
+      <!-- .number自动将用户的输入值转化为数值类型 -->
+      年龄：<input type="text" v-model.number="age" />
+
+      <hr />
+      <!-- .lazy在"change"是而非"input"时更新。即取消实时更新：当文本框失去焦点时更新一次 -->
+      地址：<input type="text" v-model.lazy="address" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          // 姓名
+          username: 'zs',
+          // 年龄
+          age: 1,
+          // 地址
+          address: '北京市',
+        },
+      })
+    </script>
+  </body>
+</html>

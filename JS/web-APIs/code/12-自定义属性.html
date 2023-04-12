@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- div{$}*5 -->
+    <!-- 自定义属性:'data- ' -->
+    <!-- 对齐文本shift+alt+f 、 文本缩进ctrl+【 或 +】-->
+    <div data-id="1" data-spm="wo">1</div>
+    <div data-id="2">2</div>
+    <div data-id="3">3</div>
+    <div data-id="4">4</div>
+    <div data-id="5">5</div>
+
+    <script>
+       const div = document.querySelector('div')
+        // 自定义属性集合
+       console.log(div.dataset.id);
+       console.log(div.dataset.spm);
+    </script>
+</body>
+
+</html>

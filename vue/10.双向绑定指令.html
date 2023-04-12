@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- v-model:双向数据绑定指令，用来辅助开发者在不操作dom的前提下，快速获取表单信息 -->
+    <div id="app">
+      <p>我的名字是：{{name}}</p>
+      <input type="text" v-model="name">
+      
+      <hr>
+
+      <p>出生的省份是：{{province}}</p>
+      <!-- 下拉菜单 -->
+      <select v-model="province">
+        <option value="">请选择</option>
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="厦门">厦门</option>
+      </select>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    <script>
+       const vm = new Vue({
+        el:'#app',
+        data:{
+          name:'zqx',
+          province:'北京',
+        } 
+      })
+    </script>
+  </body>
+</html>

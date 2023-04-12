@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [2,4,3,1,5]
+        // 循环四次（因为只需要比较四次）
+        for (let i = 0; i < arr.length - 1; i++){
+            // j=3，2，1，0；内层for循环完毕之后才会循环外层
+            for (let j = 0; j < arr.length - i - 1; j++){
+                if (arr[j] > arr[j + 1]){
+                    // 交换两个变量
+                    let tmp = arr[j]
+                    arr[j] = arr[j + 1]
+                    arr[j + 1] = tmp
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>

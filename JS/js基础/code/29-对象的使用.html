@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明对象，可类比声明数组比如：let arr = [1,2,3]，先声明后使用
+        let obj = {
+            // 属性
+            name: '小张',
+            sex: '女',
+            'my-age': '18'
+        }
+        // 3.1使用属性--查
+        document.write(obj.name);
+        // 1.改属性
+        obj.name = '小王'
+        document.write(obj.name)
+        // 2.增
+        obj.hobby = '玩'
+        document.write(obj.hobby)
+        // 3.2查--对象名['属性名']
+        console.log(obj['my-age']);
+        
+    </script>
+</body>
+</html>

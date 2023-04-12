@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- div.box -->
+    <div class="box">我是div</div>
+    <div class="box">123</div>
+    <!-- p#nav -->
+    <p id="nav"></p>
+    <ul class="a">
+        <li>测试1</li>
+        <li>测试2</li>
+        <li>测试3</li>
+    </ul>
+    <script>
+        // // 1.获取匹配的第一个元素即只获取第一个div -- document.querySelector('css选择器')
+        // // querySelector -- 查询选择器
+        // // const -- 定义常量,'div'-- 不加引号就会被当作变量来看
+        // // const box = document.querySelector('div')
+        // const box = document.querySelector('.box')
+        // console.log(box)
+
+        // const nav = document.querySelector('#nav')
+        // console.log(nav)
+
+        // // 2.1获取第一个小li
+        // // const li = document.querySelector('ul li:first-child')
+        // // console.log(li)
+
+        // // 2.2获取所有的小li -- 伪数组（没有pop、push等方法）
+        // const lis = document.querySelectorAll('ul li')
+        // console.log(lis);
+
+        // 3.获取元素
+        const lis = document.querySelectorAll('.a li')
+        // console.log(lis)
+        for (let i = 0; i < lis.length; i++){
+            console.log(lis[i]);
+        }
+         
+        const p = document.querySelectorAll('.box')
+        console.log(p);
+        p[0].style.color = 'red'
+    </script>
+</body>
+</html>

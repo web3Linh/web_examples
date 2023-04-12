@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.元字符
+        // 规则.test(检测主体)
+        console.log(/哈/.test('哈')) //“哈”这串字符串里面是否带有哈字
+        // 2.边界符 (/^哈/.test('二哈') -- 是否以哈字开头
+        console.log(/^哈/.test('二哈')) 
+        // /^哈$/.test('二哈') -- 是否以哈字开头和结尾
+        console.log(/^哈$/.test('二哈')) 
+        console.log(/^哈$/.test('哈哈')) // false
+        console.log(/^哈$/.test('哈')) //true
+
+        // 3./^哈*$/.test('哈哈') -- 允许出现多次哈 且字符串只能是哈
+        console.log(/^哈*$/.test('哈哈')) //true
+        console.log(/^哈*$/.test('哈二哈')) //false
+
+        // 4./^哈?$/.test('哈二哈')
+        console.log(/^哈?$/.test('哈二哈')) //false
+        console.log(/^哈?$/.test('哈哈')) //false
+        console.log(/^哈?$/.test('哈')) //true
+
+        // 5.重复n次
+        console.log(/^哈{4}$/.test('哈哈哈哈哈哈哈哈哈')) //false
+        console.log(/^哈{4}$/.test('哈哈哈哈'))  //true
+        // 6.{n,}重复n次或更多次
+        console.log(/^哈{4,}$/.test('哈哈哈哈哈哈哈哈哈')) //true
+        console.log(/^哈{4,}$/.test('哈哈哈哈'))  //true
+
+        // 7.{n,m}重复n到m次，逗号左右两边没有空格
+        console.log(/^哈{4,6}$/.test('哈哈哈哈哈哈哈哈哈')) //false
+        console.log(/^哈{4,6}$/.test('哈哈哈哈'))  //true
+        console.log(/^哈{4,7}$/.test('哈哈哈哈哈哈哈哈哈')) //false
+        console.log(/^哈{4,5}$/.test('哈哈哈哈'))  //true
+
+        // 8.字符类 [abc] 只选其中一个
+        console.log(/^[abc]$/.test('a'))  //true
+        console.log(/^[abc]$/.test('b'))  //true
+        console.log(/^[abc]$/.test('abc'))  //false
+        // 选其中两个
+        console.log(/^[abc]{2}$/.test('ac'))  //true
+        // 字符类 [A-Z]
+        console.log('----------')
+        console.log(/^[A-Z]$/.test('P')) //true
+        console.log(/^[A-Z]{6}$/.test('ABCDEF')) //true
+        console.log(/^[0-9]$/.test(5)) //true
+        // 只能输入英文字母加数字
+        console.log(/^[a-zA-Z0-9]$/.test(5)) //true
+        console.log(/^[a-zA-Z0-9]$/.test('a')) //true
+        console.log(/^[a-zA-Z0-9]$/.test('Z')) //true
+    </script>
+</body>
+</html>
+

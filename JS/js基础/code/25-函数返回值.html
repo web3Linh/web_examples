@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数的返回值
+        function fn(){
+            return 20 //return后面的代码不会被执行，以及return后面的数据不能换行写。若fn（）函数没有返回值则输出为undefined
+        }
+        // 相当于执行了 fn() = 20 ，fn()为调用者
+        // console.log(fn());
+        let re = fn()
+        console.log(re);
+
+        // 1.求最大值函数
+        function getMax(x,y){
+            return x > y ? x : y
+        }
+        let max = getMax(1,2)
+        console.log(max);
+
+        // let max1;
+        // // 2.求任意数组的最大值，并且返回
+        // function getArrMax (arr = []){
+        //     max1 = arr[0]
+        //     for(let i = 1; i < arr.length; i++){
+        //         if(max1 < arr[i]){
+        //             max1 = arr[i]
+        //         }
+        //     }
+        //     // 返回值
+        //     // return max1
+        // }
+        // getArrMax([1, 3, 5, 7, 9])
+        // console.log(max1)
+
+        // 2.求任意数组的最大值，并且返回
+        function getArrMax (arr = []){
+            // 先准备一个max2变量存放数组的第一个值
+            let max2 = arr[0]
+            let min = arr[0]
+            for(let i = 1; i < arr.length; i++){
+                if(max2 < arr[i]){
+                    max2 = arr[i]
+                }
+                // 最小值
+                if(min > arr[i]){
+                    min = arr[i]
+                }
+            }
+            // 返回值：将值传递出去
+            return [max2 , min] //max2里的值给了函数的调用者getArrMax([1, 3, 5, 7, 11])
+        }
+        let newArr = getArrMax([1, 3, 5, 7, 11])
+        // console.log(newArr)
+        console.log(`数组的最大值是：${newArr[0]}`);
+        console.log(`数组的最小值是：${newArr[1]}`);
+    </script>
+</body>
+</html>

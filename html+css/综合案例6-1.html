@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            /* 删除链接自带下划线 */
+            text-decoration: none;
+            /* a显示是行内标签，加宽加高不生效，因此需转显示模式为行内块模式 */
+            width: 100px;
+            height: 50px;
+            display: inline-block;
+            background-color: red;
+            color: white;
+            /* 文本位置 */
+            text-align: center;
+            /* 行高 */
+            line-height: 50px;
+        }
+        /* 对链接设置鼠标悬停状态 */
+        a:hover{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- a{内容$}*5 -->
+    <!-- 选多行内容：alt+shift+鼠标左键 -->
+    <a href="#">导航1</a>
+    <a href="#">导航2</a>
+    <a href="#">导航3</a>
+    <a href="#">导航4</a>
+    <a href="#">导航5</a>
+</body>
+</html>

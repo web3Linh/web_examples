@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.自定义一个随机颜色函数 -- ‘alt+键盘上/下键’可实现该段文字上下移动
+        function getRandomColor(flag = true){
+        // 3.如果是true则返回#fffffff
+        if(flag){
+            let str = '#'
+            // 3.1定义一个数组
+            let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+            // 3.2利用for循环抽六次
+            for(let i = 1; i <= 6; i++){
+              let num = Math.floor(Math.random() * arr.length)
+              str += arr[num]
+            }
+            document.write(`
+              <p style="color:${str}">我是随机颜色1</p>
+              `);
+        } else{
+            let r = Math.floor(Math.random() * 256)
+            let g = Math.floor(Math.random() * 256)
+            let b = Math.floor(Math.random() * 256)
+            document.write(`
+                <p style="color: rgb(${r}, ${g}, ${b});">我是随机颜色2</p> 
+            `);
+        }
+        // 4.否则是false则返回rgb(255, 255, 255)
+        }
+        // 2.调用函数
+        getRandomColor(true)
+        getRandomColor(false)
+        getRandomColor()
+    </script>
+</body>
+</html>

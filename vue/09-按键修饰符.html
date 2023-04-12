@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2.在页面中声明一个将要被vue所控制的DOM区域 -->
+    <div id="app">
+        <!-- @keyup监听按键事件。@keyup.enter="submit"：监听回车按键 -->
+        <input type="text" @keyup.enter="submit" @keyup.esc="clearInput">
+    </div>
+
+    <!-- 1.导入vue.js的脚本文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    
+    <script>
+    //  3.创建vue实例对象   
+    const vm = new Vue({
+        // 3.1指定vue要控制页面的哪个区域
+        el:'#app',
+        // 指定Model数据源
+        data:{},
+        methods:{
+            // 获取文本最新的值
+            submit(e){
+                console.log('摁下了enter键，最新的值是：' + e.target.value)
+            },
+            //清空文本框的值
+            clearInput(e){
+                e.target.value = ''
+            },
+        }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let s = +prompt('请输入秒数:')
+       function getTime(t){
+        // 获取小时
+        // parseInt取整函数
+        let h = parseInt(t / 60 / 60 % 24)
+        // 获取分钟
+        let m = parseInt(t / 60 % 60)
+        // 获取秒
+        let s = parseInt(t % 60)
+        // 自动补零
+        h = h < 10 ? '0' + h : h
+        m = m < 10 ? '0' + m : m
+        s = s < 10 ? '0' + s : s //函数里面的s为局部变量，不影响函数外相同变量名的值
+        return `转化完毕之后是${h}小时${m}分${s}秒`
+       }
+       let str = getTime(s)
+       document.write(str)
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.页面输出1~100
+        // 变量起始值
+        let i = 1
+        // 终止条件
+        while(i<=100){
+            document.write(`这是第${i}个数<br>`)
+        // 变量变化量
+            i++
+        }
+
+        // 2.页面输出1~100累加和
+        let h = 1
+        let sum = 0
+        while(h <=100){
+            sum += h
+            h++
+        }
+        console.log(sum);//5050
+
+        // 3.计算1~100的偶数和
+        let m = 1
+        let sum1 = 0
+        while(m <=100){
+            // 筛选偶数
+            if(m % 2 === 0){
+                sum1 += m
+            }
+            m++
+        }
+        console.log(sum1);
+    </script>
+</body>
+</html>

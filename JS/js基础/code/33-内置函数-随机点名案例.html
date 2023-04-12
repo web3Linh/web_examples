@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.定义一个数组
+        let arr = ['小张', '小林', '小王', '小杨','小艺','小青','小白']
+        // Math.random()取[0,1)之间的数字
+        //向下取整，取索引0~6之间的数字
+        let num = Math.floor(Math.random() * arr.length) 
+        // document.write(num) -- 显示索引号
+        document.write(arr[num])
+        // 1.2删除已经抽到的人的名字 -- splice(起始位置，删除几个元素)
+        arr.splice(num, 1)
+        console.log(`剩下哪些人未抽中：${arr}`)
+
+        // document.write(`<br>`)
+
+        // // 2.取 N~M 的随机整数
+        // function getRandom(M, N){
+        //    return Math.floor(Math.random() * (M - N +1)) + N
+        // }  
+        // document.write(getRandom(2, 12))
+    </script>
+</body>
+</html>

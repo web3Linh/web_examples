@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 1.定义数组
+        const arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+        // 定义定时器的全局变量
+        let timerId = 0
+        let random = 0
+        // 2.获取start元素
+        const st = document.querySelector('.btns .start')
+        // 2.1获取qs元素
+        const qs = document.querySelector('.box .qs')
+
+        st.addEventListener('click', function () {
+            // // 3.随机抽取数组中的名字
+            // const random = parseInt(Math.random() * arr.length)
+            // console.log(arr[random])
+            // // 3.1将随机抽取出来的名字写到div.qs中
+            // qs.innerHTML = arr[random]
+
+            // 定时器
+            timerId = setInterval(function () {
+                // 3.随机抽取数组中的名字
+                random = parseInt(Math.random() * arr.length)
+                // console.log(arr[random])
+                // 3.1将随机抽取出来的名字写到div.qs中
+                qs.innerHTML = arr[random]
+                // console.log(arr[random])
+            }, 50)
+
+            // // 5.如果数组里面只有一个值了，就不需要抽取了。-- 禁用两个按钮 
+            // if (arr.length === 1){
+            //    st.disabled = true
+            //    end.disabled = true
+            // }
+        })
+
+
+        // 4.关闭定时器
+        // 4.1获取元素
+        const end = document.querySelector('.btns .end')
+        end.addEventListener('click', function () {
+            clearInterval(timerId)
+            arr.splice(random, 1)
+            console.log(arr)
+            // 5.如果数组里面只有一个值了，就不需要抽取了。-- 禁用两个按钮 
+            if (arr.length === 1) {
+                st.disabled = true
+                end.disabled = true
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

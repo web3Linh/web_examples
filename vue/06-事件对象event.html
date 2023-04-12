@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2.在页面中声明一个将要被vue所控制的DOM区域 -->
+    <div id="app">
+        <p>count的值为:{{count}}</p>
+        <button @click="addCount">+1</button>
+    </div>
+
+    <!-- 1.导入vue.js的脚本文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    <script>
+    //  3.创建vue实例对象   
+    const vm = new Vue({
+        // 3.1指定vue要控制页面的哪个区域
+        el:'#app',
+        // 指定Model数据源
+        data:{
+            count:0,
+        },
+        methods:{
+            //接收事件参数对象event，简写为e
+            addCount(e){
+                // 只要触发了事件处理函数就可以拿到当前元素的背景颜色，用常量nowBgColor接收
+                const nowBgColor = e.target.style.backgroundColor
+                console.log(nowBgColor)
+                e.target.style.backgroundColor = nowBgColor === 'red' ? '' : 'red'
+                count += 1 
+            }
+        }
+    })
+    </script>
+</body>
+</html>

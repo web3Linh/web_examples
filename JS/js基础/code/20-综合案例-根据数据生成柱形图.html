@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            /* 弹性布局 */
+            display: flex;
+            width: 700px;
+            height: 300px;
+            border-left: 1px solid pink;
+            border-bottom: 1px solid pink;
+            margin: 50px auto;
+            /* 均匀排列每个元素，每个元素周围分配相同的空间 */
+            justify-content: space-around;
+            /* 项目位于容器的中央。 */
+            align-items: flex-end;
+            text-align: center;
+        }
+
+        .box>div {
+            display: flex;
+            width: 50px;
+            background-color: pink;
+            /* 内部元素在 flex 容器中以柱状的形式布局 */
+            flex-direction: column;
+            /* 均匀排列每个元素，首个元素放置于起点，末尾元素放置于终点 */
+            justify-content: space-between;
+        }
+
+        .box div span {
+            margin-top: -20px;
+        }
+
+        .box div h4 {
+            margin-bottom: -35px;
+            width: 70px;
+            margin-left: -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">
+       <div style="height: 123px;">
+            <span>123</span>
+            <h4>第1季度</h4>
+        </div>
+        
+        <div style="height: 156px;">
+            <span>156</span>
+            <h4>第2季度</h4>
+        </div>
+        <div style="height: 120px;">
+            <span>120</span>
+            <h4>第3季度</h4>
+        </div>
+        <div style="height: 210px;">
+            <span>210</span>
+            <h4>第4季度</h4>
+        </div>
+    </div> -->
+
+    <script>
+        // 1. 四次弹框效果
+        // 声明一个新的数组
+        // let arr = []
+        // for (let i = 1; i <= 4; i++) {
+        //     // let num = prompt(`请输入第${i}季度的数据:`)
+        //     // arr.push(num)
+        //     arr.push(prompt(`请输入第${i}季度的数据:`))
+        //     // push记得加小括号，不是等号赋值的形式
+        // }
+        // // console.log(arr)  ['123','135','345','234']
+        // // 盒子开头
+        // document.write(` <div class="box">`)
+
+        // // 盒子中间 利用循环的形式  跟数组有关系
+        // for (let i = 0; i < arr.length; i++) {
+        //     document.write(`
+        //       <div style="height: ${arr[i]}px;">
+        //         <span>${arr[i]}</span>
+        //         <h4>第${i + 1}季度</h4>
+        //       </div>          
+        //     `)
+        // }
+        // // 盒子结尾
+        // document.write(` </div>`)
+
+        // 1.四次弹框效果
+        // 2.新建一个空数组，将输入的数据保存进去
+        let arr = []
+        for(let i = 1; i <= 4; i++){
+            let num = prompt(`请输入第${i}季度的数据：`)
+            arr.push(num)
+        }
+        console.log(arr)
+
+        // 盒子开头
+        document.write(`<div class="box">`)
+
+        // 盒子中间 利用循环的形式--跟数组有关系
+        for(let j =0; j < arr.length; j++){
+            document.write(`
+            <div style="height: ${arr[j]}px;">
+                <span>${arr[j]}</span>
+                <h4>第${j}季度</h4>
+            </div>
+            `)
+        }
+
+        // 盒子结尾 
+        document.write(`</div>`)
+    </script>
+</body>
+</html>
