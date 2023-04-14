@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/template-web.js"></script>
+    <script src="./lib/jquery.js"></script>
+</head>
+<body>
+    <div id="div"></div>
+
+    <!-- 2.定义模板 -->
+    <script type="text/html" id="tpl-date">
+        <!-- 5.过滤器 -->
+        <h3>{{regTime | dateFormat}}</h3>
+    </script>
+    <!-- 1.定义数据 -->
+    <script>
+        // 6.定义处理时间的过滤器 -- template.defaults.imports.
+        template.defaults.imports.dateFormat = function(date){
+            console.log(date)
+            var y = date.getFullYear()
+            var m = date.getMonth() + 1
+            var d = date.getDate()
+
+            return y + '-' + m + '-' + d
+        }
+
+        var data = {
+            regTime: new Date()
+        }
+        // 3.调用函数
+        var res = template('tpl-date', data)
+        // console.log(res)
+        // 4.渲染数据
+        $('#div').html(res)
+    </script>
+</body>
+</html>
