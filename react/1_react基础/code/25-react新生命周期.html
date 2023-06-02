@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list{
+            width: 200px;
+            height: 150px;
+            background-color: pink;
+            overflow: auto;
+        }
+        .news{
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test"></div>
+
+    <!-- 引入核心库 -->
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <!-- <script></script> -->
+    <script type="text/babel">
+        // 1.创建组件
+        class NewsList extends React.Component{
+            state = {
+                newsArr: []
+            }
+
+            componentDidMount(){
+                setInterval(()=>{
+                    console.log(1);
+                    const {newsArr} = this.state
+                    const news = '新闻' + (newsArr.length+1)
+                    this.setState({newsArr: [news, ...newsArr]})
+                },1000)
+
+            }
+
+            getSnapshotBeforeUpdate(){
+                return this.refs.list.scrollHeight
+
+            }
+
+            componentDidUpdate(preProps, preState, height){
+                this.refs.list.scrollTop += this.refs.list.scrollHeight - height
+            }
+
+            render(){
+                return (
+                    <div className='list' ref="list">
+                        {
+                            this.state.newsArr.map((n, index) => {
+                                return <div key={index} className="news">{n}</div>
+                            })
+                        }
+                    </div>
+                )
+            }
+        }
+        // 2.渲染虚拟DOM到页面
+        ReactDOM.render(<NewsList/>, document.getElementById('test'))
+    </script>
+</body>
+
+</html>

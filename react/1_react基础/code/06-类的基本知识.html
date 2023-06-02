@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test"></div>
+
+    <!-- 引入核心库 -->
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <!-- <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script> -->
+    
+    <script type="text/javascript">
+        // 1.创建一个Person类
+        class Person {
+            // 1.1构造器方法 -- 接传进来的数据
+            constructor(name, age){
+                this.name = name
+                this.age = age
+                // console.log(this.name)
+                // console.log(this.age)
+            }
+            speak(){
+                console.log(`我的名字是${this.name},今年${this.age}岁了`)
+            }
+        }
+        // 2.创建Person的实例对象
+        const p1 = new Person('Tom', 18)
+        const p2 = new Person('Jerry', 19)
+        // console.log(p1)
+        // console.log(p2)
+        // 3.调用speak方法
+        p1.speak()
+        p2.speak()
+
+        // 创建一个Student类，继承于Person类
+        class Student extends Person {
+            // 想要有自己的属性则还是需要构造器
+            constructor(name, age ,grade){
+                super(name, age)
+                this.grade = grade
+            }
+            speak(){
+                console.log(`我的名字是${this.name},今年${this.age}岁了,目前正在读${this.grade}`)
+            }
+            // 构造自己的方法
+            study(){
+                console.log('好好学习，天天向上！')
+            }
+        }
+        // 实例
+        const s1 = new Student('zhangzhang', 18, '高三')
+        s1.speak()
+        s1.study()
+    </script>
+</body>
+
+</html>
+</body>
+</html>

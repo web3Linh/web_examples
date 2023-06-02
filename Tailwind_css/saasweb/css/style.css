@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+
+@layer components {
+    .text {
+      @apply  text-3xl font-bold underline
+    }
+  }
+
+@tailwind utilities;
+/* 写原生的 */

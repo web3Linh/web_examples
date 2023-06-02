@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test"></div>
+
+    <!-- 引入核心库 -->
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <!-- <script></script> -->
+    <script type="text/babel">
+
+        // 1.创建组件
+        class A extends React.Component {
+            state = {
+                name: '玫瑰'
+            }
+
+            add = () => {
+                // let {name} = this.state
+                this.setState({name: '郁金香'})
+            }
+
+            render() {
+                const {name} = this.state
+                return (
+                    <div>
+                        <h2>我是A组件</h2>
+                        <button onClick={this.add}>点击</button>
+                        {/*props传递标签属性给B组件*/}
+                        <B name={this.state.name}/>
+                    </div>
+                )
+            }
+        }
+
+        class B extends React.Component {
+            render() {
+                return (
+                    <div>
+                        {/*props接收*/}
+                        <h2>我是B组件，接收到的花是：{this.props.name}</h2>
+                    </div>
+                )
+            }
+        }
+        // 2.渲染虚拟DOM到页面
+        ReactDOM.render(<A/>, document.getElementById('test'))
+    </script>
+</body>
+
+</html>

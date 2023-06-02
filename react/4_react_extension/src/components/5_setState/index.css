@@ -1,0 +1,17 @@
+.father{
+    width: 100%;
+    background-color: #84c589;
+    padding: 8px;
+}
+
+.son{
+    width: 100%;
+    background-color: pink;
+    padding: 8px;
+}
+
+.grand{
+    width: 100%;
+    background-color: skyblue;
+    padding: 8px;
+}
